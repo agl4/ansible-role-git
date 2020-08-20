@@ -1,7 +1,8 @@
 ---
 galaxy_info:
+  role_name: git
+  description: Role for installing git.
   author: Attila GOLONCSER
-  description: Role for installing and setting up git on a desktop.
 
   license: BSD License
 
