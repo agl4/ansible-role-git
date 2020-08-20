@@ -43,3 +43,11 @@ jobs:
         working-directory: "${{ github.repository }}"
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
+
+
+      - name: Notify Gaxy
+        uses: distributhor/workflow-webhook@v1
+        env: 
+          webhook_url: https://galaxy.ansible.com/api/v1/notifications/
+
+ 
