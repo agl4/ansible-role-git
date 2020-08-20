@@ -1,0 +1,4 @@
+---
+# vars file for ansible-role-python
+__git_packages:
+  - git

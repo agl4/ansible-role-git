@@ -1,0 +1,5 @@
+---
+# vars file for ansible-role-desktop-git
+__git_install_become: no
+__git_packages:
+  - git
