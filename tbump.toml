@@ -10,6 +10,7 @@ regex = '''
   \.
   (?P<patch>\d+)
   '''
+
 [git]
 message_template = "Bump to v{new_version}"
 tag_template = "v{new_version}"
