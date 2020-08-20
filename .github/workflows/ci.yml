@@ -44,7 +44,7 @@ jobs:
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
 
-      - name: Notify Gaxy
-        uses: distributhor/workflow-webhook@v1
-        env:
-          webhook_url: https://galaxy.ansible.com/api/v1/notifications/
+      - name: Import to Galaxy
+        uses: robertdebock/galaxy-action@1.0.3
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
