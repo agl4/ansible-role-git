@@ -42,8 +42,11 @@ jobs:
         with:
           python-version: ${{ matrix.python_version }}
 
-      - name: Install dependencies
-        run: pip install ansible molecule yamllint docker ansible-lint
+      - name: Set up pipenv
+        uses: dschep/install-pipenv-action@v1
+
+      # - name: Install dependencies
+      #   run: pip install ansible molecule yamllint docker ansible-lint
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -52,7 +55,7 @@ jobs:
         run: npm install --global prettier
 
       - name: Molecule test
-        run: molecule test
+        run: pipenv run molecule test
         working-directory: "${{ github.repository }}"
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
