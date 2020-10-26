@@ -6,14 +6,14 @@ verify_ssl = true
 autopep8 = "*"
 flake8 = "*"
 pyflakes = "*"
+tbump = "*"
+bumpversion = "*"
 
 [packages]
 ansible = "2.10"
 ansible-lint = "*"
-bumpversion = "*"
 docker = "*"
 molecule = "*"
-tbump = "*"
 yamllint = "*"
 
 python_version = "3.8"
