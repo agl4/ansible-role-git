@@ -46,8 +46,10 @@ jobs:
         uses: dschep/install-pipenv-action@v1
 
       - name: Install dependencies
-        run: pipenv install && pipenv graph
+        run: pipenv install
 
+      - name: Install dependencies
+        run: pipenv graph
       # - name: Install dependencies
       #   run: pip install ansible molecule yamllint docker ansible-lint
 
