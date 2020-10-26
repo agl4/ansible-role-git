@@ -16,13 +16,13 @@ jobs:
         experimental: [false]
         molecule_image:
           - agoloncser/docker-ansible-fedora31
-          # - agoloncser/docker-ansible-fedora32
-          # - agoloncser/docker-ansible-ubuntu1804
-          # - agoloncser/docker-ansible-ubuntu2004
-          # - agoloncser/docker-ansible-centos7
-          # - agoloncser/docker-ansible-centos8
-          # - agoloncser/docker-ansible-debian10
-          # - agoloncser/docker-ansible-debian11
+          - agoloncser/docker-ansible-fedora32
+          - agoloncser/docker-ansible-ubuntu1804
+          - agoloncser/docker-ansible-ubuntu2004
+          - agoloncser/docker-ansible-centos7
+          - agoloncser/docker-ansible-centos8
+          - agoloncser/docker-ansible-debian10
+          - agoloncser/docker-ansible-debian11
         include:
           - python_version: "3.8"
             molecule_image: agoloncser/docker-ansible-fedora33
@@ -35,8 +35,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-        # with:
-        #   path: "${{ github.repository }}"
       - name: Use Python ${{ matrix.python_version }}
         uses: actions/setup-python@v1
         with:
@@ -51,16 +49,11 @@ jobs:
       - name: Install pip dependencies
         run: pipenv install
 
-      # - name: Install dependencies
-      #   run: pipenv graph
-      # - name: Install dependencies
-      #   run: pip install ansible molecule yamllint docker ansible-lint
       - name: Install Prettier.js
         run: npm install --global prettier
 
       - name: Molecule test
         run: pipenv run molecule test
-        # working-directory: "${{ github.repository }}"
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
 
