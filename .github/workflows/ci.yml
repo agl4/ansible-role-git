@@ -49,13 +49,10 @@ jobs:
         run: |
           pipenv install
           pipenv graph
-        with:
-          path: "${{ github.repository }}"
+          pwd
 
-      - name: Install dependencies
-        run: pipenv graph
-        with:
-          path: "${{ github.repository }}"
+      # - name: Install dependencies
+      #   run: pipenv graph
       # - name: Install dependencies
       #   run: pip install ansible molecule yamllint docker ansible-lint
 
