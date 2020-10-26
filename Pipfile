@@ -12,7 +12,7 @@ bumpversion = "*"
 [packages]
 ansible = "2.10"
 ansible-lint = "*"
-docker = "*"
+molecule-docker = "*"
 molecule = "*"
 yamllint = "*"
 
