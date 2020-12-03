@@ -8,26 +8,17 @@ galaxy_info:
   platforms:
     - name: MacOSX
       versions:
-        - 10.15
-        - 10.14
-        - 10.13
+        - all
     - name: Ubuntu
       versions:
-        - focal
-        - bionic
-        - groovy
+        - all
     - name: Debian
       versions:
-        - bullseye
-        - buster
+        - all
     - name: Fedora
       versions:
-        - 31
-        - 32
-        - 33
-        - 34
+        - all
     - name: EL
       versions:
-        - 8
-        - 7
+        - all
 dependencies: []
