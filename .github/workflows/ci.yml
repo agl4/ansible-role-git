@@ -6,24 +6,8 @@ on:
   schedule:
     - cron: "12 6 * * *"
 jobs:
-  molecule:
+  linting:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
-    strategy:
-      fail-fast: false
-      matrix:
-        python_version: ["3.8"]
-        experimental: [false]
-        molecule_image:
-          - agoloncser/docker-ansible-fedora32
-          - agoloncser/docker-ansible-fedora33
-          - agoloncser/docker-ansible-ubuntu2004
-          - agoloncser/docker-ansible-ubuntu2010
-        include:
-            - molecule_image: agoloncser/docker-ansible-fedora34
-              python_version: "3.8"
-              experimental: true
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -56,6 +40,35 @@ jobs:
       - name: Install Prettier.js
         run: npm install --global prettier
 
+      - name: yamllint
+        run: pipenv run yamllint .
+
+      - name: prettier
+        run: pipenv run prettier --check .
+
+      - name: ansible-lint
+        run: pipenv run ansible-lint .
+
+  molecule:
+    needs: linting
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: ["3.8"]
+        experimental: [false]
+        molecule_image:
+          - agoloncser/docker-ansible-fedora32
+          - agoloncser/docker-ansible-fedora33
+          - agoloncser/docker-ansible-ubuntu2004
+          - agoloncser/docker-ansible-ubuntu2010
+        include:
+          - molecule_image: agoloncser/docker-ansible-fedora34
+            python_version: "3.8"
+            experimental: true
+
+    steps:
       - name: Molecule test
         run: pipenv run molecule test
         env:
