@@ -16,9 +16,9 @@ jobs:
         experimental: [false]
         molecule_image:
           - agoloncser/docker-ansible-fedora32
-          # - agoloncser/docker-ansible-fedora33
-          # - agoloncser/docker-ansible-ubuntu2004
-          # - agoloncser/docker-ansible-ubuntu2010
+          - agoloncser/docker-ansible-fedora33
+          - agoloncser/docker-ansible-ubuntu2004
+          - agoloncser/docker-ansible-ubuntu2010
 
     steps:
       - name: Checkout
