@@ -5,4 +5,4 @@
 - name: Install git
   package:
     name: "{{ git_packages }}"
-  become: "{{ __git_install_become | default('yes') }}"
+  become: "{{ __git_install_become | default(true) }}"
