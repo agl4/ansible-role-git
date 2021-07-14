@@ -14,7 +14,7 @@
           vars/{{ ansible_os_family }}.yml
       skip: true
 
-- name: python_packages
+- name: git_packages
   set_fact:
     git_packages: "{{ __git_packages | list }}"
   when: git_packages is not defined
