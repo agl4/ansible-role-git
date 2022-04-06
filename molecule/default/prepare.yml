@@ -4,6 +4,6 @@
   gather_facts: true
   tasks:
     - name: update repos on debian
-      apt:
+      ansible.builtin.apt:
         update_cache: true
       when: ansible_distribution == "Debian"

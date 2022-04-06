@@ -1,8 +1,8 @@
 ---
 - name: Set variables
-  include_tasks: variables.yml
+  ansible.builtin.include_tasks: variables.yml
 
 - name: Install git
-  package:
+  ansible.builtin.package:
     name: "{{ git_packages }}"
   become: "{{ __git_install_become | default(true) }}"
