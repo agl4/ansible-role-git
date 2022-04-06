@@ -1,7 +1,7 @@
 ---
 - name: os-specific variables
   include_vars: "{{ item }}"
-  with_first_found:
+  ansible.builtin.with_first_found:
     - files:
         - >-
           vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml
@@ -15,6 +15,6 @@
       skip: true
 
 - name: git_packages
-  set_fact:
+  ansible.builtin.set_fact:
     git_packages: "{{ __git_packages | list }}"
   when: git_packages is not defined
