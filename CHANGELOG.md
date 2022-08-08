@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/agoloncser/ansible-role-git/compare/v2.0.0...v2.0.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* search vars files inside role ([49905a1](https://github.com/agoloncser/ansible-role-git/commit/49905a1557ed31bff510a6960504b8d867fd29cc))
+
 ## [2.0.0](https://github.com/agoloncser/ansible-role-git/compare/v1.0.5...v2.0.0) (2022-04-06)
 
 
