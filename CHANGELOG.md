@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/agl4/ansible-role-git/compare/v2.0.1...v3.0.0) (2024-02-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Change username
+
+### Features
+
+* Change username ([a78ebac](https://github.com/agl4/ansible-role-git/commit/a78ebac2b06c412721b3a3c51f4d445f6e405aec))
+
 ## [2.0.1](https://github.com/agl4/ansible-role-git/compare/v2.0.0...v2.0.1) (2022-08-08)
 
 
